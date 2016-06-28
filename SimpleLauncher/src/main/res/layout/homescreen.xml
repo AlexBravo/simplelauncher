@@ -6,12 +6,86 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".HomeScreen">
+    tools:context=".MainActivity">
 
-    <fragment
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+
+        <FrameLayout
+            xmlns:fab="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:foreground="?android:windowContentOverlay"
+            >
+
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                />
+
+            <RelativeLayout
+                android:id="@+id/fab_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="bottom|right">
+
+                <com.melnykov.fab.FloatingActionButton
+                    xmlns:fab="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/fab_remove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="90dp"
+                    android:layout_marginRight="16dp"
+
+                    android:src="@drawable/ic_remove_white_36dp"
+                    fab:fab_colorNormal="@color/colorAccent"
+                    fab:fab_colorPressed="@color/colorAccentDark"
+                    fab:fab_colorRipple="@color/colorAccentDark"
+                    android:onClick="removeCompletedTasks"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    />
+
+                <com.melnykov.fab.FloatingActionButton
+                    xmlns:fab="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/fab_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+
+                    android:src="@drawable/ic_add_white_36dp"
+                    fab:fab_colorNormal="@color/colorPrimary"
+                    fab:fab_colorPressed="@color/colorPrimaryDark"
+                    fab:fab_colorRipple="@color/colorPrimaryDark"
+                    android:onClick="addTask"
+                    />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:name="ch.arnab.simplelauncher.AppsGridFragment"
+            android:layout_weight="1"
             android:id="@+id/apps_grid" />
+    </LinearLayout>
 
 </RelativeLayout>

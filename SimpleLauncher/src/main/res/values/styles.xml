@@ -1,20 +1,30 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Wallpaper.NoTitleBar">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
+    <style name="AppTheme" parent="AppTheme.Base"/>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="undoBarStyle">@style/UndoBar</item>
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <!-- Style for the snack bar -->
+    <style name="UndoBar" parent="@style/UndoBarMaterialStyle">
+        <!--<item name="buttonStyle">@style/UndoBarButton</item>-->
+        <!--<item name="messageStyle">@style/UndoBarMessage</item>-->
+    </style>
+
+    <style name="UndoBarMessage" parent="@style/UndoBarMessageMaterial">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="UndoBarButton" parent="@style/UndoBarButtonMaterial">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
     </style>
 
 </resources>

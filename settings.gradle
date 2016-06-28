@@ -1,1 +1,4 @@
 include ':SimpleLauncher'
+include ':libraries:FloatingActionButton:library'
+include ':libraries:material-dialogs:library'
+include ':libraries:material-ripple-master:library'
